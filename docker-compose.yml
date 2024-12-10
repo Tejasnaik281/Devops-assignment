@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+
+#Container specification for deploying a frontend container
+  frontend:
+    build:
+      context: ./frontend   #extracting the dockerfile from frontend folder to create a frontend image for deploying container 
+    container_name: react-frontend
+    ports:
+      - "3000:80" # Maps port 3000 on the host to port 80 in the container
+    depends_on:
+      - backend
+    networks:
+      - app-network #using the app-network for multicontainer inter-connection 
+
+
+#Container specification for deploying a Backend container 
+  backend:
+    build:
+      context: ./backend   #extracting the dockerfile from backend folder to create a backend end image for deploying container
+    container_name: node-backend
+    ports:
+      - "5000:5000" # Maps port 5000 on the host to port 5000 in the container
+    environment:
+      - DB=${DB}  #fulfills the environment variable mentioned in the .env file from root directory to create connection between backend and db
+    depends_on:
+      - mongo    
+    networks:
+      - app-network  #using the app-network for multicontainer inter-connection
+
+#Container specification for deploying a database container 
+  mongo:
+    image: mongo:latest   #using the latest version of mongodb image
+    container_name: mongo-database
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=rootpassword
+      - MONGO_INITDB_DATABASE=mydatabase  
+    ports:
+      - "27017:27017" # Maps port 27017 on the host to port 27017 in the container
+    networks:
+      - app-network   #using the app-network for multicontainer inter-connection
+
+networks:
+  app-network:
+    driver: bridge   #Using the bridge type of network connection between containers
