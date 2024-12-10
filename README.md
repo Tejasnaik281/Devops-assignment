@@ -14,9 +14,9 @@ project-root/
 
 ├── frontend/
 
-│     ├── Dockerfile
+│     ── Dockerfile
 
-│     ├── src/
+│     ── src/
 
 
 ├── backend/
