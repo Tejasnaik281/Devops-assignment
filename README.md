@@ -27,4 +27,3 @@ project-root/
 
 └── .env
 
-|__ docker-compose.yml
