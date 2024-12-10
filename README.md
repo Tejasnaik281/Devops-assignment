@@ -14,16 +14,16 @@ project-root/
 
 ├── frontend/
 
-     ── Dockerfile
+     ─ Dockerfile
 
-     ── src/
+     ─ src/
 
 
 ├── backend/
 
-     ├── Dockerfile
+     ─ Dockerfile
 
-     ├── src/
+     ─ src/
 
 └── .env
 
