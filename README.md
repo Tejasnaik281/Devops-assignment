@@ -7,9 +7,13 @@ reference repositories :
  Frontend: https://github.com/Anand-1432/Techdome-frontend
 
 Below is the directory structure for deploying the application
+
 project-root/
+
 ├── docker-compose.yml
+
 ├── frontend/
+
 │   ├── Dockerfile
 │   ├── src/
 ├── backend/
