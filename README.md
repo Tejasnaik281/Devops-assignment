@@ -11,17 +11,19 @@ Below is the directory structure for deploying the application
 project-root/
 
 ├── docker-compose.yml
-|
+
 ├── frontend/
-|
+
 │   ├── Dockerfile
-|
+
 │   ├── src/
 |
 ├── backend/
-|
+
 │   ├── Dockerfile
-|
+
 │   ├── src/
-|
+
 └── .env
+
+|__ docker-compose.yml
