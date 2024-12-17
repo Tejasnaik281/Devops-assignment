@@ -1,5 +1,5 @@
-# Devops-assignment
-React application deployment
+
+# React application deployment
 
 Demonstration video : https://drive.google.com/file/d/1dMA7VrNMtkeLT5S40rKDCd9TRHyTO80p/view?usp=sharing
 
